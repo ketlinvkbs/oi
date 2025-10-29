@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, InputGroup, ListGroup, Stack } from 'react-bootstrap';
+import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 // Using React Bootstrap logo temporarily - replace with actual Guru TI logo
 import logo from '../assets/react.svg'; // Placeholder for Guru TI logo
 import { Link } from 'react-router-dom';
@@ -50,6 +52,9 @@ const messageBubbleStyle = (sender) => ({
 });
 
 function ChatPage() {
+  const { logout } = useAuth();
+  const navigate = useNavigate();
+  
   // Mock de dados
   const [messages, setMessages] = useState([
     { id: 1, sender: 'ai', text: 'Olá! Eu sou o Guru TI. Como posso ajudar você hoje?' },
@@ -68,6 +73,11 @@ function ChatPage() {
 
     setMessages([...messages, userMessage, aiMessage]);
     setInput('');
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
   };
 
   return (
@@ -97,7 +107,7 @@ function ChatPage() {
           </div>
           
           <div className="mt-auto">
-            <Button variant="outline-secondary" className="w-100">Sair</Button>
+            <Button variant="outline-secondary" className="w-100" onClick={handleLogout}>Sair</Button>
           </div>
         </Col>
 
