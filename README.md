@@ -1,16 +1,120 @@
-# React + Vite
+# Guru-Ti Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based web application for tech support and assistance with Guru-Ti features.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Before you begin, ensure you have the following installed on your system:
 
-## React Compiler
+- [Node.js](https://nodejs.org/) (version 16 or higher)
+- npm or yarn package manager
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+You can verify your installation with:
 
-## Expanding the ESLint configuration
+```bash
+node --version
+npm --version
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/ketlinvkbs/oi.git
+cd oi
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+## Running the Application
+
+1. **Development mode:**
+   
+   To run the application in development mode with hot-reloading:
+
+   ```bash
+   npm run dev
+   ```
+
+   The application will start on `http://localhost:5173`
+
+2. **Production build:**
+   
+   To create a production-ready build:
+
+   ```bash
+   npm run build
+   ```
+
+   To preview the production build locally:
+
+   ```bash
+   npm run preview
+   ```
+
+## Project Structure
+
+```
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── ...
+├── package.json
+└── ...
+```
+
+- `src/components/` - Reusable React components
+- `src/pages/` - Page components for different routes
+- `src/services/` - API and external service integrations
+- `src/assets/` - Static assets like images
+
+## Technologies Used
+
+- React 19
+- Vite (build tool)
+- Bootstrap (styling)
+- React Router (navigation)
+- Axios (HTTP requests)
+- SCSS (styling)
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Lint the code
+- `npm run preview` - Preview production build
+
+## Environment Setup
+
+Make sure you have a stable internet connection during the initial installation to download all required packages.
+
+## Troubleshooting
+
+If you encounter any issues during installation:
+
+1. Clear npm cache:
+   ```bash
+   npm cache clean --force
+   ```
+
+2. Delete the `node_modules` folder and reinstall:
+   ```bash
+   rm -rf node_modules package-lock.json
+   npm install
+   ```
+
+If you have any issues running the application, please open an issue in the repository.
+
+## Contributing
+
+Feel free to fork this repository, make changes, and submit pull requests.
